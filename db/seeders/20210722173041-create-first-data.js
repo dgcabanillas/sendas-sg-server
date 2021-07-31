@@ -6,12 +6,12 @@ import bcrypt from 'bcrypt';
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         return Promise.all([
-            models.Area.bulkCreate(data.areas),
-            models.Categoria.bulkCreate(data.categorias),
-            models.Modalidad.bulkCreate(data.modalidades),
-            models.EstadoCivil.bulkCreate(data.estadosCivil),
-            models.Genero.bulkCreate(data.generos),
-            models.Usuario.create({
+            await models.Area.bulkCreate(data.areas),
+            await models.Categoria.bulkCreate(data.categorias),
+            await models.Modalidad.bulkCreate(data.modalidades),
+            await models.EstadoCivil.bulkCreate(data.estadosCivil),
+            await models.Genero.bulkCreate(data.generos),
+            await models.Usuario.create({
                 nombre:     'Diego',
                 apellido:   'Cabanillas',
                 rol:        'ADMIN',
@@ -25,12 +25,12 @@ module.exports = {
 
     down: async (queryInterface, Sequelize) => {
         return Promise.all([
-            models.Area.destroy({ where: {} }),
-            models.Categoria.destroy({ where: {} }),
-            models.Modalidad.destroy({ where: {} }),
-            models.EstadoCivil.destroy({ where: {} }),
-            models.Genero.destroy({ where: {} }),
-            models.Usuario.destroy({ where: { dni: '48445894' }})
+            await models.Area.destroy({ where: {} }),
+            await models.Categoria.destroy({ where: {} }),
+            await models.Modalidad.destroy({ where: {} }),
+            await models.EstadoCivil.destroy({ where: {} }),
+            await models.Genero.destroy({ where: {} }),
+            await models.Usuario.destroy({ where: { dni: '48445894' }})
         ]);
     }
 };

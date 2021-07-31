@@ -86,16 +86,24 @@ npx sequelize-cli init
     ```
     # anteponer NODE_ENV=test antes de npx
     NODE_ENV=test npx sequelize-cli db:seed:all
+    
+    # ó poner --env test al final
+    npx sequelize-cli db:seed:all --env test
     ```
 - **production**
     ```
     # anteponer NODE_ENV=production antes de npx
     NODE_ENV=production npx sequelize-cli db:seed:all
+
+    # ó poner --env production al final
+    npx sequelize-cli db:seed:all --env production
     ```
 
 ### comandos
 ```
 # Comandos
+# crear seed en local, luego se hace un PR para producción
+    npx sequelize-cli seed:generate --name creating-admin-user
 # ejecutar seed 
     npx sequelize-cli db:seed:all
 # deshacer el último seed

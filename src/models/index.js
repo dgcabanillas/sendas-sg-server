@@ -10,8 +10,8 @@ const config = require(path.resolve(__dirname, '..', '..', 'config', 'database.j
 const db = {};
 
 let sequelize;
-if( env == 'production' ) {
-    sequelize = new Sequelize( process.env.DATABASE_URL, {
+if( env == 'production' || env == "test" ) {
+    sequelize = new Sequelize( process.env.DATABASE_URL || config.url , {
         ssl: true,
         underscored: true,
         freezeTableName: true,

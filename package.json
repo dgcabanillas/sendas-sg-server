@@ -9,7 +9,6 @@
   "scripts": {
     "start": "nodemon ./src/server.js -e js, graphql --exec babel-node",
     "serve": "node build/server.js",
-    "clean": "rm -rf node_modules",
     "build:server": "babel src/ --out-dir build",
     "syncGraphql": "rsync -a --prune-empty-dirs --include 'src/types/*' --include '*.graphql' 'src/types' 'build'",
     "build": "concurrently \"npm run build:server\" \"npm run syncGraphql\""

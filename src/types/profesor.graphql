@@ -1,0 +1,15 @@
+type Profesor {
+    curso: CursoAperturado!
+    profesor: Usuario! 
+}
+
+type Mutation {
+    agregarProfesor(
+        id_curso_aperturado: Int! 
+        id_usuario: String!
+    ): Profesor!
+    eliminarProfesor(
+        id_curso_aperturado: Int!
+        id_usuario: String!
+    ): [Int!]! #[id_curso_aperturado!, id_usuario!]
+}

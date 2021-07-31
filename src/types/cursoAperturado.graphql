@@ -1,0 +1,54 @@
+type CursoAperturado {
+    id_curso_aperturado: Int!
+    periodo: String!
+    descripcion: String
+    fecha_inicio: String
+    fecha_fin: String
+    imagen: String!
+    pdf: String!
+    estado: String!
+
+    curso: Curso!
+    modalidad: Modalidad!
+    precios_matricula: [Precio!]
+    modulos: [Modulo!]
+    profesores: [Usuario!]
+    matriculas: [MatriculaCurso!]
+}
+type Query {
+    cursosAperturados: [CursoAperturado!]
+    cursoAperturado(id_curso_aperturado: Int!): CursoAperturado!
+}
+type Mutation {
+    aperturarCurso (
+        periodo: String!
+        id_modalidad: Int!
+        descripcion: String
+        fecha_inicio: String
+        fecha_fin: String
+        id_curso: String!
+        imagen: String!
+        pdf: String!
+    ): CursoAperturado!
+    editarCursoAperturado(
+        id_curso_aperturado: Int!
+        periodo: String!
+        id_modalidad: Int!
+        descripcion: String
+        fecha_inicio: String
+        fecha_fin: String
+        imagen: String!
+        pdf: String!
+    ): CursoAperturado!
+    borrarCursoAperturado(id_curso_aperturado: Int!): Int!
+    cambiarEstadoCursoAperturado(id_curso_aperturado: Int!): CursoAperturado!
+
+    agregarPrecioMatricula (
+        id_curso_aperturado: Int!
+        id_precio: Int!
+    ): [Int!]!
+    eliminarPrecioMatricula (
+        id_curso_aperturado: Int!
+        id_precio: Int!
+    ): [Int!]!
+}

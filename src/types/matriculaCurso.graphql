@@ -1,0 +1,20 @@
+type MatriculaCurso {
+    id_matricula: Int!
+    fecha_matricula: String!
+
+    curso:  CursoAperturado!
+    alumno: Usuario!
+    deuda:  Deuda!
+}
+
+type Mutation {
+    matricularEnCurso (
+        id_curso_aperturado: Int!
+        id_usuario:          String!
+        id_precio:           Int!
+    ): MatriculaCurso!
+    borrarMatricula (
+        id_matricula:   Int!
+        borrar_deuda:   Boolean!
+    ): Int!
+}

@@ -1,0 +1,11 @@
+type EstadoCivil {
+    id_estado_civil: String
+}
+type Query {
+    estadosCivil: [EstadoCivil!]
+}
+type Mutation {
+    crearEstadoCivil(estado_civil: String!): EstadoCivil 
+    editarEstadoCivil(id_estado_civil: String!, estado_civil: String!): EstadoCivil 
+    borrarEstadoCivil(id_estado_civil: String!): Boolean!
+}

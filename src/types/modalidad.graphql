@@ -1,0 +1,12 @@
+type Modalidad {
+    id_modalidad: Int!
+    modalidad: String!
+}
+type Query {
+    modalidades: [Modalidad!]
+}
+type Mutation {
+    crearModalidad(modalidad: String!): Modalidad!
+    editarModalidad(id_modalidad: Int!, modalidad: String!): Modalidad!
+    borrarModalidad(id_modalidad: Int!): Int!
+}

@@ -1,0 +1,12 @@
+type Area {
+    id_area: Int!
+    area: String!
+}
+type Query {
+    areas: [Area!]
+}
+type Mutation {
+    crearArea(area: String!): Area!
+    editarArea(id_area: Int!, area: String!): Area!
+    borrarArea(id_area: Int!): Int!
+}

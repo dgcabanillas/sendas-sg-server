@@ -1,0 +1,22 @@
+type Moneda {
+    id_moneda: Int!
+    codigo: String!
+    moneda: String!
+    simbolo: String!
+}
+type Query {
+    monedas: [Moneda!]
+}
+type Mutation {
+    crearMoneda(
+        codigo: String!
+        moneda: String!
+        simbolo: String!
+    ): Moneda!
+    editarMoneda(
+        id_moneda: Int!
+        codigo: String!
+        moneda: String!
+        simbolo: String!
+    ): Moneda!
+}

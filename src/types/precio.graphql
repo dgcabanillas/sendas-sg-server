@@ -1,0 +1,27 @@
+type Precio {
+    id_precio: Int!
+    descuento: Float!
+    tipo_descuento: String!
+    descripcion: String!
+    activo: Boolean!
+
+    monto: Monto!
+}
+type Mutation {
+    crearPrecio (
+        monto: Float!
+        id_moneda: Int!
+        descuento: Float!
+        tipo_descuento: String!
+        descripcion: String!
+    ): Precio!
+    editarPrecio (
+        id_precio: Int!
+        monto:     Float!
+        id_moneda: Int!
+        descuento: Float!
+        tipo_descuento: String!
+        descripcion: String!
+    ): Precio!
+    cambiarEstadoPrecio(id_precio: Int!): Precio!
+}

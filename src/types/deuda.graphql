@@ -1,0 +1,9 @@
+type Deuda {
+    id_deuda: Int!
+    fecha_registro: String!
+
+    usuario:        Usuario!
+    monto_inicial:  Monto!
+    monto_actual:   Monto!
+    pagos:          [Pago!]
+}

@@ -1,0 +1,23 @@
+type Pago {
+    id_pago: Int!
+    fecha_pago: String!
+    fecha_revision: String
+    imagen_voucher: String!
+    estado_pago: String!
+
+    monto_pagado: Monto!
+}
+
+type Mutation {
+    crearPago (
+        id_deuda:  Int!
+        monto:     Float!
+        imagen_voucher: String!
+    ): Pago!
+    editarPago (
+        id_pago:   Int!
+        monto:     Float!
+        imagen_voucher: String!
+    ): Pago!
+    borrarPago(id_pago: Int!): Int!
+}

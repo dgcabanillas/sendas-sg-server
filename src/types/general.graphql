@@ -1,0 +1,8 @@
+type Error {
+    error:          String,
+    description:    String
+}
+
+type Errors {
+    errors: [Error!]
+}

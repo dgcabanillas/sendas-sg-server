@@ -1,0 +1,39 @@
+type Modulo {
+    id_modulo: Int!,
+    nro_modulo: Int!,
+    modulo: String!
+    fecha_inicio: String
+    fecha_fin: String
+
+    precios_modulo: [Precio!]
+    inscripciones:  [InscripcionModulo!]
+}
+type Query {
+    modulos(id_curso_aperturado: Int!): [Modulo!]
+}
+type Mutation {
+    crearModulo(
+        id_curso_aperturado: Int!
+        nro_modulo: Int!
+        modulo: String!
+        fecha_inicio: String
+        fecha_fin: String
+    ): Modulo!
+    editarModulo(
+        id_modulo: Int!
+        nro_modulo: Int!
+        modulo: String!
+        fecha_inicio: String
+        fecha_fin: String
+    ): Modulo!
+    borrarModulo(id_modulo: Int!): Int!
+
+    agregarPrecioModulo (
+        id_modulo: Int!
+        id_precio: Int!
+    ): [Int!]!
+    eliminarPrecioModulo (
+        id_modulo: Int!
+        id_precio: Int!
+    ): [Int!]!
+}

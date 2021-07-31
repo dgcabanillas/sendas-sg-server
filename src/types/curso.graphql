@@ -1,0 +1,28 @@
+type Curso {
+    id_curso: ID!
+    curso: String!
+    fecha_creacion: String!
+    
+    area: Area!
+    categoria: Categoria!
+    cursos_aperturados: [CursoAperturado!]
+}
+type Query {
+    curso(id_curso: ID!): Curso!
+    cursos: [Curso!]
+}
+type Mutation {
+    crearCurso(
+        id_curso: ID!
+        curso: String!
+        id_area: Int!
+        id_categoria: Int!
+    ): Curso!
+    editarCurso(
+        id_curso: ID!
+        curso: String!
+        id_area: Int!
+        id_categoria: Int!
+    ): Curso!
+    borrarCurso(id_curso: ID!): ID!
+}

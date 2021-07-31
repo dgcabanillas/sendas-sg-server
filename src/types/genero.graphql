@@ -1,0 +1,11 @@
+type Genero {
+    id_genero: String
+}
+type Query {
+    generos: [Genero!]
+}
+type Mutation {
+    crearGenero(genero: String!): Genero!
+    editarGenero(id_genero: String!, genero: String!): Genero!
+    borrarGenero(id_genero: String!): String!
+}

@@ -1,0 +1,21 @@
+type InscripcionModulo {
+    id_inscripcion: Int!
+    id_matricula:   Int!
+    fecha_inscripcion: String!
+
+    modulo:  Modulo!
+    deuda:   Deuda!
+}
+
+type Mutation {
+    inscribirEnModulo (
+        id_matricula: Int!
+        id_modulo:    Int!
+        id_precio:    Int!
+    ): InscripcionModulo!
+    borrarInscripcion (
+        id_curso_aperturado: Int!
+        id_usuario:          String!
+        borrar_deuda:        Boolean!
+    ): Int! 
+}

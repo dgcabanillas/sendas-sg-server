@@ -1,0 +1,12 @@
+type Categoria {
+    id_categoria: Int!
+    categoria: String!
+}
+type Query {
+    categorias: [Categoria!]
+}
+type Mutation {
+    crearCategoria(categoria: String!): Categoria!
+    editarCategoria(id_categoria: Int!, categoria: String!): Categoria!
+    borrarCategoria(id_categoria: Int!): Int!
+}

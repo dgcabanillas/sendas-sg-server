@@ -1,0 +1,19 @@
+type Monto {
+    id_monto: Int!
+    monto:    Float!
+
+    moneda:   Moneda!
+}
+
+type Mutation {
+    crearMonto (
+        monto:      Float!
+        id_moneda:  Int!
+    ): Monto!
+    editarMonto (
+        id_monto:  Int!
+        monto:     Float!
+        id_moneda: Int!
+    ): Monto!
+    borrarMonto(id_monto: Int!): Int!
+}

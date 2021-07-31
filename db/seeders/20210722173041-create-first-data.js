@@ -1,6 +1,7 @@
 'use strict';
 import data from '../../src/data';
 import models from '../../src/models';
+import bcrypt from 'bcrypt';
 
 module.exports = {
     up: async (queryInterface, Sequelize) => {

@@ -17,7 +17,13 @@ module.exports = {
         "host":     process.env.DB_TEST_HOST,
         "dialect":  "postgres",
         "seederStorage": "sequelize",
-        "seederStorageTableName": "sequelize_data"
+        "seederStorageTableName": "sequelize_data",
+        "dialectOptions": {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false, 
+            }
+        },
     },
     production: {
         "username": process.env.DB_PROD_USERNAME,
@@ -26,6 +32,12 @@ module.exports = {
         "host":     process.env.DB_PROD_HOST,
         "dialect":  "postgres",
         "seederStorage": "sequelize",
-        "seederStorageTableName": "sequelize_data"
+        "seederStorageTableName": "sequelize_data",
+        "dialectOptions": {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false, 
+            }
+        },
     }
 };

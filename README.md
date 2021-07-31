@@ -92,3 +92,16 @@ npx sequelize-cli init
     # anteponer NODE_ENV=production antes de npx
     NODE_ENV=production npx sequelize-cli db:seed:all
     ```
+
+### comandos
+```
+# Comandos
+# ejecutar seed 
+    npx sequelize-cli db:seed:all
+# deshacer el último seed
+    npx sequelize-cli db:seed:undo
+# deshacer un seed es específico
+    npx sequelize-cli db:seed:undo --seed name-of-seed-as-in-data
+# deshacer todos los seed
+    npx sequelize-cli db:seed:undo:all
+```

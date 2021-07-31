@@ -26,14 +26,14 @@ const apollo = new ApolloServer({
 
 const PORT = process.env.PORT || '4000';
 
-models.sequelize.sync({ force: false })
+models.sequelize.sync({ force: true })
     .then( () => {
         apollo.listen(PORT).then(({url}) => {
             console.log(`Servidor corriendo en: ${url}`);
         });
     })
     .then( async () => {
-        if( forceOption.force && false ) {
+        if( false ) {
             await models.Area.bulkCreate(data.areas);
             await models.Categoria.bulkCreate(data.categorias);
             await models.Modalidad.bulkCreate(data.modalidades);
